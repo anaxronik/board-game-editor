@@ -1,0 +1,20 @@
+{
+  "name": "board-game-editor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:front": "cd front && npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anaxronik/board-game-editor.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anaxronik/board-game-editor/issues"
+  },
+  "homepage": "https://github.com/anaxronik/board-game-editor#readme"
+}
