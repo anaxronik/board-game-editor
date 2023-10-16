@@ -1,0 +1,25 @@
+.frame {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.line {
+  content: "";
+  position: absolute;
+  background-color: #a19b9b;
+}
+
+.horizontal {
+  left: 0;
+  right: 0;
+  height: 1px;
+}
+
+.vertical {
+  top: 0;
+  bottom: 0;
+  width: 1px;
+}

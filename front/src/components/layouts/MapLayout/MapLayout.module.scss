@@ -1,0 +1,28 @@
+$horizontalGap: 20px;
+$verticalGap: 20px;
+
+.layout {
+  position: relative;
+  max-height: 100vh;
+  overflow-y: hidden;
+}
+
+.widget {
+  position: absolute;
+  z-index: 1000;
+}
+
+.left {
+  left: $horizontalGap;
+  top: $verticalGap;
+}
+
+.right {
+  right: $horizontalGap;
+  top: $verticalGap;
+}
+
+.bottomRight {
+  right: $horizontalGap;
+  bottom: $verticalGap;
+}
