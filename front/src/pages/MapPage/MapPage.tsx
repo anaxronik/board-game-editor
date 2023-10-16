@@ -3,6 +3,7 @@ import { observer } from "mobx-react-lite";
 import { useState } from "react";
 import Frame from "../../components/Frame/Frame";
 import MapActors from "../../components/MapActors/MapActors";
+import MapModeSelector from "../../components/MapModeSelector/MapModeSelector";
 import MapPositionChanger from "../../components/MapPositionChanger/MapPositionChanger";
 import ScaleChanger from "../../components/ScaleChanger/ScaleChanger";
 import MapLayout from "../../components/layouts/MapLayout/MapLayout";
@@ -19,6 +20,7 @@ const MapPage = observer(() => {
         left: <ScaleChanger />,
         right: <div>sdqwd qwd123 123r123 </div>,
         bottomRight: <MapPositionChanger />,
+        topCenter: <MapModeSelector />,
       }}
     >
       <div

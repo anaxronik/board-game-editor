@@ -5,3 +5,14 @@
   background-color: #fff;
   border-radius: 8px;
 }
+
+.clickable {
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+}
+
+.moving {
+  background-color: blue;
+}

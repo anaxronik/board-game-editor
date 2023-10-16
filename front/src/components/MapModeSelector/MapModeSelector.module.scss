@@ -1,0 +1,21 @@
+.block {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.button {
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.active {
+  background-color: #545454;
+  color: white;
+}

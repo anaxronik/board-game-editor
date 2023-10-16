@@ -26,3 +26,8 @@ $verticalGap: 20px;
   right: $horizontalGap;
   bottom: $verticalGap;
 }
+
+.topCenter {
+  right: 50%;
+  top: $verticalGap;
+}

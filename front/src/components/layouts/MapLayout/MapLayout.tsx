@@ -8,6 +8,7 @@ interface IProps {
     left?: React.ReactNode;
     right?: React.ReactNode;
     bottomRight?: React.ReactNode;
+    topCenter?: React.ReactNode;
   };
 }
 
