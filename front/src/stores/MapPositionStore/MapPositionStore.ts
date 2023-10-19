@@ -42,12 +42,8 @@ export class MapPositionStore {
   };
 
   setPosition = (coords: { x?: number; y?: number }) => {
-    if (coords.x !== undefined) {
-      this.x = coords.x;
-    }
-    if (coords.y !== undefined) {
-      this.y = coords.y;
-    }
+    if (coords.x !== undefined) this.x = coords.x;
+    if (coords.y !== undefined) this.y = coords.y;
   };
 }
 export const mapPositionStore = new MapPositionStore();

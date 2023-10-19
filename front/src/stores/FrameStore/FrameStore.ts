@@ -73,14 +73,6 @@ export class FrameStore {
     };
     const position = this.getCellByCellCoords(cell);
 
-    console.group();
-    console.log("mousePosition", mousePosition);
-    console.log("map", map.x, map.y);
-    console.log("absoluteMousePosition", absoluteMousePosition);
-    console.log("cell", cell);
-    console.log("position", position);
-    console.groupEnd();
-
     return {
       position,
       cell,
