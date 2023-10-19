@@ -2,8 +2,10 @@
   position: absolute;
   width: 100px;
   height: 100px;
+  max-width: 100px;
   background-color: #fff;
   // border-radius: 8px;
+  overflow: hidden;
 }
 
 .clickable {

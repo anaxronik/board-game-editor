@@ -2,6 +2,7 @@ import { observer } from "mobx-react-lite";
 import React from "react";
 
 import classNames from "classnames";
+import img from "../../assets/images/flor.jpg";
 import { frameStore as frame } from "../../stores/FrameStore/FrameStore";
 import { mapActorsStore } from "../../stores/MapActorsStore/MapActorsStore";
 import styles from "./MapActors.module.scss";
@@ -41,7 +42,9 @@ const MapActors: React.FC = observer(() => {
                 actor.toggleIsMoving();
               }
             }}
-          ></div>
+          >
+            <img src={img} alt="" />
+          </div>
         );
       })}
     </>
