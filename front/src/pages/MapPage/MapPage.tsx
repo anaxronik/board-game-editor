@@ -9,6 +9,7 @@ import MapPositionChanger from "../../components/MapPositionChanger/MapPositionC
 import ScaleChanger from "../../components/ScaleChanger/ScaleChanger";
 import MapLayout from "../../components/layouts/MapLayout/MapLayout";
 import { mapPositionStore } from "../../stores/MapPositionStore/MapPositionStore";
+import { scaleStore } from "../../stores/ScaleStore/ScaleStore";
 import styles from "./MapPage.module.scss";
 
 const MapPage = observer(() => {
@@ -57,6 +58,13 @@ const MapPage = observer(() => {
         }}
         onTouchMove={(e) => {
           console.log("onTouchMove", e);
+        }}
+        onWheel={(e) => {
+          const MODIFIER = 0.5;
+          mapPositionStore.movePosition({
+            x: e.deltaX * scaleStore.scale * MODIFIER,
+            y: e.deltaY * scaleStore.scale * MODIFIER,
+          });
         }}
       >
         <Frame />

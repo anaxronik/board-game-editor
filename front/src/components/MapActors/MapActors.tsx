@@ -26,10 +26,16 @@ const MapActors: React.FC = observer(() => {
             )}
             key={idx}
             style={{
+              position: "absolute",
+              overflow: "hidden",
               left: pos.left + "px",
               top: pos.top + "px",
               width: width + "px",
               height: height + "px",
+              backgroundImage: `url(${img})`,
+              objectFit: "cover",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
             }}
             onMouseDown={(e) => {
               if (actor.isClickable) {
@@ -42,9 +48,7 @@ const MapActors: React.FC = observer(() => {
                 actor.toggleIsMoving();
               }
             }}
-          >
-            <img src={img} alt="" />
-          </div>
+          ></div>
         );
       })}
     </>
