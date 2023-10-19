@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/anaxronik/board-game-editor/issues"
   },
-  "homepage": "https://github.com/anaxronik/board-game-editor#readme"
+  "homepage": "https://github.com/anaxronik/board-game-editor#readme",
+  "dependencies": {
+    "@nestjs/mongoose": "^10.0.1",
+    "mongoose": "^7.6.2"
+  }
 }
