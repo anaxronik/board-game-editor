@@ -19,6 +19,10 @@ export class MapActorsStore {
   get actors() {
     return this._actors;
   }
+
+  addActor = (actor: MapActor) => {
+    this._actors.push(new MapActorStore(actor));
+  };
 }
 
 export const mapActorsStore = new MapActorsStore();

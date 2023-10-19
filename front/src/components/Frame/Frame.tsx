@@ -13,14 +13,14 @@ const Frame: React.FC = observer(() => {
         <div
           key={idx}
           className={cn(styles.line, styles.horizontal)}
-          style={{ top: y + "px" }}
+          style={{ top: y - 0.5 + "px" }}
         ></div>
       ))}
       {frameStore.verticalLines.map((x, idx) => (
         <div
           key={idx}
           className={cn(styles.line, styles.vertical)}
-          style={{ left: x + "px" }}
+          style={{ left: x - 0.5 + "px" }}
         ></div>
       ))}
     </div>
