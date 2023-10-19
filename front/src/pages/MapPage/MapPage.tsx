@@ -1,6 +1,7 @@
 import { observer } from "mobx-react-lite";
 
 import { useState } from "react";
+import AddMapBlock from "../../components/AddMapBlock/AddMapBlock";
 import Frame from "../../components/Frame/Frame";
 import MapActors from "../../components/MapActors/MapActors";
 import MapModeSelector from "../../components/MapModeSelector/MapModeSelector";
@@ -60,6 +61,7 @@ const MapPage = observer(() => {
       >
         <Frame />
         <MapActors />
+        <AddMapBlock />
       </div>
     </MapLayout>
   );

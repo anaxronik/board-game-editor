@@ -1,8 +1,8 @@
 import { makeAutoObservable } from "mobx";
 
 export class MapPositionStore {
-  x = 0;
-  y = 0;
+  x = -50;
+  y = 850;
   stepSize = 20;
 
   constructor() {

@@ -20,9 +20,13 @@ export class FrameStore {
     return this._frameSize * this.scaleStore.scale;
   }
 
+  get yFrameOffset() {
+    return this.mapPositionStore.y % this.frameSize;
+  }
+
   get horizontalLines(): number[] {
     const lines: number[] = [];
-    const offset: number = this.mapPositionStore.y % this.frameSize;
+    const offset: number = this.yFrameOffset;
 
     const linesCount = Math.floor(screenStore.height / this.frameSize) + 2;
     for (let index = 0; index < linesCount; index++) {
@@ -41,6 +45,47 @@ export class FrameStore {
     }
     return lines;
   }
+
+  getCellByCellCoords = (cell: { x: number; y: number }) => {
+    const x = this.mapPositionStore.x * -1 + cell.x * this.frameSize;
+    const y = this.mapPositionStore.y + cell.y * this.frameSize * -1;
+    const offset = this.frameSize;
+    return {
+      top: y - offset,
+      left: x,
+      right: x + offset,
+      bottom: y,
+    };
+  };
+
+  getCellByMousePosition = (mousePosition: { x: number; y: number }) => {
+    const map = this.mapPositionStore;
+
+    const scale = this.scaleStore.scale;
+    const absoluteMousePosition = {
+      x: (mousePosition.x + map.x) / scale,
+      y: (-mousePosition.y + map.y) / scale,
+    };
+
+    const cell = {
+      x: Math.floor((absoluteMousePosition.x / this.frameSize) * scale),
+      y: Math.floor((absoluteMousePosition.y / this.frameSize) * scale),
+    };
+    const position = this.getCellByCellCoords(cell);
+
+    console.group();
+    console.log("mousePosition", mousePosition);
+    console.log("map", map.x, map.y);
+    console.log("absoluteMousePosition", absoluteMousePosition);
+    console.log("cell", cell);
+    console.log("position", position);
+    console.groupEnd();
+
+    return {
+      position,
+      cell,
+    };
+  };
 }
 
 export const frameStore = new FrameStore(scaleStore, mapPositionStore);
