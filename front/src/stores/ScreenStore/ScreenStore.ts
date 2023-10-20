@@ -1,16 +1,20 @@
 import { makeAutoObservable } from "mobx";
 
 export class ScreenStore {
+  private _width = 0;
+  private _height = 0;
+
   constructor() {
+    this.readSize();
     makeAutoObservable(this);
   }
 
   get width() {
-    return window.innerWidth;
+    return this._width;
   }
 
   get height() {
-    return window.innerWidth;
+    return this._height;
   }
 
   get screenStartX() {
@@ -20,6 +24,11 @@ export class ScreenStore {
   get screenStart0() {
     return 0;
   }
+
+  readSize = () => {
+    this._width = window.innerWidth;
+    this._height = window.innerHeight;
+  };
 }
 
 export const screenStore = new ScreenStore();

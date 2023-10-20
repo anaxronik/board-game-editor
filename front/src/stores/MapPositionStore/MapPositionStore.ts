@@ -1,17 +1,24 @@
 import { makeAutoObservable } from "mobx";
 
 export class MapPositionStore {
-  x = -50;
-  y = 850;
+  x = -100;
+  y = 800;
   stepSize = 20;
+
+  isMovable = false;
 
   constructor() {
     makeAutoObservable(this);
   }
 
+  setIsMovable = (bool: boolean) => {
+    this.isMovable = bool;
+  };
+
   setX = (value: number) => {
     this.x = value;
   };
+
   setY = (value: number) => {
     this.y = value;
   };
@@ -41,9 +48,10 @@ export class MapPositionStore {
     }
   };
 
-  setPosition = (coords: { x?: number; y?: number }) => {
-    if (coords.x !== undefined) this.x = coords.x;
-    if (coords.y !== undefined) this.y = coords.y;
+  setPosition = (newPosition: { x?: number; y?: number }) => {
+    if (newPosition.x !== undefined) this.x = newPosition.x;
+    if (newPosition.y !== undefined) this.y = newPosition.y;
   };
 }
+
 export const mapPositionStore = new MapPositionStore();

@@ -9,7 +9,7 @@ export class MapModeStore {
   activeMode: null | MapMode = null;
 
   constructor() {
-    this.modes = [{ mode: "editor" }, { mode: "play" }, { mode: "master" }];
+    this.modes = [{ mode: "play" }, { mode: "editor" }, { mode: "master" }];
     this.setActive(this.modes[0]);
     makeAutoObservable(this);
   }
