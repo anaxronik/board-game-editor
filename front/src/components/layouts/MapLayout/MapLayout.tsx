@@ -20,7 +20,7 @@ const MapLayout: React.FC<IProps> = observer((props) => {
 
   return (
     <div className={styles.layout}>
-      {props.children}
+      <div className={styles.screen}>{props.children}</div>
 
       {widgets?.map(([key, component]) => (
         <div className={classNames(styles.widget, styles[key])} key={key}>

@@ -25,11 +25,10 @@ const MapPage = observer(() => {
         topCenter: <MapModeSelector />,
       }}
     >
-      <MapMover>
-        <Frame />
-        <MapActors />
-        <AddMapBlock />
-      </MapMover>
+      <MapMover />
+      <MapActors />
+      <Frame />
+      <AddMapBlock />
     </MapLayout>
   );
 });

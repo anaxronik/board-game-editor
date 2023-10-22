@@ -7,20 +7,18 @@ import styles from "./MapModeSelector.module.scss";
 const MapModeSelector: React.FC = observer(() => {
   return (
     <div className={styles.block}>
-      {store.modes.map((m) => (
-        <button
-          className={classNames(
-            styles.button,
-            store.activeMode === m ? styles.active : undefined
-          )}
-          onClick={() => {
-            store.setActive(m);
-          }}
-          key={m.mode}
-        >
-          {m.mode}
-        </button>
-      ))}
+      {store.modes.map((m) => {
+        const active = store.activeMode?.mode === m.mode;
+        return (
+          <button
+            className={classNames(styles.button, active && styles.active)}
+            onClick={() => store.setActive(m)}
+            key={m.mode}
+          >
+            {m.mode}
+          </button>
+        );
+      })}
     </div>
   );
 });

@@ -6,6 +6,7 @@ import { frameStore } from "../../stores/FrameStore/FrameStore";
 
 import { mapActorsStore } from "../../stores/MapActorsStore/MapActorsStore";
 import { mapModeStore } from "../../stores/MapModeStore/MapModeStore";
+import { mapPositionStore } from "../../stores/MapPositionStore/MapPositionStore";
 import styles from "./AddMapBlock.module.scss";
 
 const AddMapBlock: React.FC = observer(() => {
@@ -46,6 +47,13 @@ const AddMapBlock: React.FC = observer(() => {
         height: frameStore.frameSize + "px",
       }}
       title={JSON.stringify(position)}
+      onMouseDown={(e) => {
+        e.stopPropagation();
+        mapPositionStore.setIsMovable(false);
+      }}
+      onMouseUp={(e) => {
+        e.stopPropagation();
+      }}
       onClick={(e) => {
         e.stopPropagation();
 
@@ -53,7 +61,6 @@ const AddMapBlock: React.FC = observer(() => {
           x: e.clientX,
           y: e.clientY,
         });
-        console.log("click", cell.cell);
         mapActorsStore.addActor({
           cellX: cell.cell.x,
           cellY: cell.cell.y,

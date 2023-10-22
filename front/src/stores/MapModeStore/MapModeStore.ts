@@ -4,13 +4,19 @@ export type MapMode = {
   mode: string;
 };
 
+export const MAP_MODES: MapMode[] = [
+  { mode: "play" },
+  { mode: "editor" },
+  { mode: "master" },
+];
+
 export class MapModeStore {
-  modes: MapMode[] = [];
+  modes: MapMode[] = MAP_MODES;
   activeMode: null | MapMode = null;
 
   constructor() {
-    this.modes = [{ mode: "play" }, { mode: "editor" }, { mode: "master" }];
-    this.setActive(this.modes[0]);
+    this.activeMode = MAP_MODES[0];
+
     makeAutoObservable(this);
   }
 

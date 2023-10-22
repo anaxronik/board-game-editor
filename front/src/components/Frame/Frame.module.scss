@@ -1,3 +1,5 @@
+@import "../../styles/colors.scss";
+
 .frame {
   position: absolute;
   left: 0;
@@ -9,7 +11,7 @@
 .line {
   content: "";
   position: absolute;
-  background-color: #a19b9b;
+  background-color: $COLOR_3;
 }
 
 .horizontal {
