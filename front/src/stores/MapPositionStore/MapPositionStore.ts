@@ -48,7 +48,7 @@ export class MapPositionStore {
     }
   };
 
-  setPosition = (newPosition: { x?: number; y?: number }) => {
+  setPosition = async (newPosition: { x?: number; y?: number }) => {
     if (newPosition.x !== undefined) this.x = newPosition.x;
     if (newPosition.y !== undefined) this.y = newPosition.y;
   };

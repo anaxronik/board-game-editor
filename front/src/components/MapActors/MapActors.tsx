@@ -1,16 +1,21 @@
 import { observer } from "mobx-react-lite";
-import React from "react";
+import React, { useEffect } from "react";
 
 import classNames from "classnames";
 import img from "../../assets/images/flor.jpg";
 import { frameStore as frame } from "../../stores/FrameStore/FrameStore";
 import { mapActorsStore } from "../../stores/MapActorsStore/MapActorsStore";
+import { mapPositionStore } from "../../stores/MapPositionStore/MapPositionStore";
 import styles from "./MapActors.module.scss";
 
 const MapActors: React.FC = observer(() => {
+  useEffect(() => {
+    mapActorsStore.recalculateVisibleActor();
+  }, [mapPositionStore.x, mapPositionStore.y]);
+
   return (
     <>
-      {mapActorsStore.actors?.map((actor, idx) => {
+      {mapActorsStore.visibleActor?.map((actor, idx) => {
         const pos = frame.getCellByCellCoords({
           x: actor.cellX,
           y: actor.cellY,

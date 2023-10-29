@@ -78,6 +78,32 @@ export class FrameStore {
       cell,
     };
   };
+
+  getCoordsByCell = (coords: { x: number; y: number }) => {
+    this.mapPositionStore;
+    const absoluteMousePosition = {
+      x: (coords.x + this.mapPositionStore.x) / this.scaleStore.scale,
+      y: (-coords.y + this.mapPositionStore.y) / this.scaleStore.scale,
+    };
+
+    return {
+      x: Math.floor(
+        (absoluteMousePosition.x / this.frameSize) * this.scaleStore.scale
+      ),
+      y: Math.floor(
+        (absoluteMousePosition.y / this.frameSize) * this.scaleStore.scale
+      ),
+    };
+  };
+
+  getIsVisibleCell = (coords: { x: number; y: number }) => {
+    console.log(coords);
+    const cellPosition = this.getCoordsByCell(coords);
+    console.log("cellPosition", cellPosition);
+    this.mapPositionStore.x;
+
+    return true;
+  };
 }
 
 export const frameStore = new FrameStore(scaleStore, mapPositionStore);
